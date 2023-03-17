@@ -1,6 +1,3 @@
-const Magic27 = 0x07564427;
-const Magic28 = 0x07564428;
-
 // Produces a Promise that consumes a Readable entirely into a Buffer
 function readIntoBuf(stream) {
   return new Promise((resolve, reject) => {
@@ -37,15 +34,18 @@ function readAppInfo(buf) {
   // First byte varies across installs, only the 2nd and 3rd seem consistent
   if (buf.readUInt8(1) != 0x44 || buf.readUInt8(2) != 0x56)
     throw new Error('Invalid file signature')
-
-  let magic = buf.slice(0,4).readUInt32LE();
-  if(magic == Magic27) {
-    return readAppEntries(buf.slice(8), 49)
-  } else if(magic == Magic28) {
-    return readAppEntries(buf.slice(8), 69)
+  console.log(buf.slice(0,8))
+  var skip;
+  var magic = buf.slice(0,4).readUInt32LE();
+  if(magic == 0x07564428) {
+    skip = 69;
+  } else if(magic == 0x07564427) {
+    skip = 49;
   } else {
-    throw new Error("Unknown 4 byte magic header")
+    throw new Error("Magic header is unknown");
   }
+
+  return readAppEntries(buf.slice(8), skip);
 }
 
 // Read a collection of app entries
@@ -54,7 +54,7 @@ function readAppEntries(buf, skip) {
 
   // App entry collection is terminated by null dword
   for (let off = 0; buf.readUInt32LE(off) != 0x00000000; ++off) {
-    let [entry, size] = readAppEntry(buf.slice(off))
+    let [entry, size] = readAppEntry(buf.slice(off), skip)
 
     entries.push(entry)
 
