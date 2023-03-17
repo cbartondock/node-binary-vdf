@@ -1,0 +1,8 @@
+{
+  "name": "binary-vdf",
+  "version": "0.1.0",
+  "description": "Parses binary VDF format",
+  "license": "MIT",
+  "author": "Will Tange <will@brt.sexy> (https://brt.sexy)",
+  "repository": "bheart/node-binary-vdf"
+}
