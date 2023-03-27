@@ -34,7 +34,6 @@ function readAppInfo(buf) {
   // First byte varies across installs, only the 2nd and 3rd seem consistent
   if (buf.readUInt8(1) != 0x44 || buf.readUInt8(2) != 0x56)
     throw new Error('Invalid file signature')
-  console.log(buf.slice(0,8))
   var skip;
   var magic = buf.slice(0,4).readUInt32LE();
   if(magic == 0x07564428) {
