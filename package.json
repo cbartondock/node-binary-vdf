@@ -3,6 +3,6 @@
   "version": "0.1.0",
   "description": "Parses binary VDF format",
   "license": "MIT",
-  "author": "Will Tange <will@brt.sexy> (https://brt.sexy)",
+  "author": "cbartondock <cbartondock@gmail.com>",
   "repository": "cbartondock/node-binary-vdf"
 }
