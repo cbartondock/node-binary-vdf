@@ -1,6 +1,6 @@
 {
   "name": "binary-vdf-2",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Parses binary VDF format",
   "license": "MIT",
   "author": "cbartondock <cbartondock@gmail.com>",
