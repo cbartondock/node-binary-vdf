@@ -4,7 +4,10 @@
   "description": "Parses binary VDF format",
   "license": "MIT",
   "author": "cbartondock <cbartondock@gmail.com>",
-  "repository": "cbartondock/node-binary-vdf",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbartondock/node-binary-vdf.git"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
