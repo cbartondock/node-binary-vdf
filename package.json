@@ -1,8 +1,26 @@
 {
   "name": "binary-vdf-2",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Parses binary VDF format",
   "license": "MIT",
   "author": "cbartondock <cbartondock@gmail.com>",
-  "repository": "cbartondock/node-binary-vdf"
+  "repository": "cbartondock/node-binary-vdf",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc",
+    "build:watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10"
+  },
+  "dependencies": {
+    "binutils64": "^0.1.2",
+    "fs": "^0.0.1-security",
+    "typescript": "^5.5.3"
+  }
 }
