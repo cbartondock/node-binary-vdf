@@ -1,4 +1,6 @@
 # `appinfo.vdf` Parser for Node.js
+[![npm version](https://badge.fury.io/js/binary-vdf-2.svg)](https://badge.fury.io/js/binary-vdf-2)
+
 
 Parses Steam's `appinfo.vdf` file for your pleasure. Either use `dump.js` to
 dump stdin as a formatted JSON string or use the `readAppInfo` function from
